@@ -115,6 +115,7 @@
                             <div class="col-md-5 col-md-offset-1">
                                 <h2 class="mb50"><span class="theme-accent-color">Nouveauté</span></h2>
                                 <p class="lead" id="news-lead">Aucune nouveauté pour le moment.</p>
+                                <p><img src="assets/img/team/author-news.jpg" class="img-news"> TheBacou</p>
                                 <p id="news-date">Le 01/01/1970</p>
                             </div>
 
@@ -250,10 +251,10 @@
                 if (xhr.readyState === 4) {
                     var data = JSON.parse(xhr.response)
                     document.getElementById("news-lead").innerHTML = data.lead
-                    document.getElementById("news-date").innerHTML = data.date
+                    document.getElementById("news-date").innerHTML = "Le " + data.date
                 }
             }
-            xhr.open('GET', "/news/lasted.json", true);
+            xhr.open('GET', "https://raw.githubusercontent.com/TheBacou/PubOMax_Site/main/news/lasted.json", true);
             xhr.send();
 
             jQuery('#headerwrap').backstretch([
