@@ -121,6 +121,13 @@ h6 {
     margin: 0 auto
 }
 
+.img-news {
+	width: 25px;
+	height: auto;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+
 .gap {
     margin-bottom: 60px
 }
