@@ -114,8 +114,8 @@
                         <div class="row">
                             <div class="col-md-5 col-md-offset-1">
                                 <h2 class="mb50"><span class="theme-accent-color">Nouveauté</span></h2>
-                                <p class="lead">Aucune nouveauté pour le moment.</p>
-                                <p>Le 01/01/1970</p>
+                                <p class="lead" id="news-lead">Aucune nouveauté pour le moment.</p>
+                                <p id="news-date">Le 01/01/1970</p>
                             </div>
 
                             <div class="col-md-5">
@@ -245,8 +245,19 @@
                 scrollTop: 0
             }, 700);
         
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    var data = JSON.parse(xhr.response)
+                    document.getElementById("news-lead").innerHTML = data.lead
+                    document.getElementById("news-date").innerHTML = data.date
+                }
+            }
+            xhr.open('GET', "/news/lasted.json", true);
+            xhr.send();
+
             jQuery('#headerwrap').backstretch([
-            "assets/img/bg/bg1.jpg",
+                "assets/img/bg/bg1.jpg",
             ], {duration: 8000, fade: 500});
         });
     </script>
