@@ -253,7 +253,7 @@
                     document.getElementById("news-date").innerHTML = document.getElementById("news-date").innerHTML.replace("01/01/1970", data.date)
                 }
             }
-            xhr.open('GET', "https://github.com/TheBacou/PubOMax_Site/blob/main/news/lasted.json", true);
+            xhr.open('GET', "https://raw.githubusercontent.com/TheBacou/PubOMax_Site/main/news/lasted.json", true);
             xhr.send();
 
             jQuery('#headerwrap').backstretch([
